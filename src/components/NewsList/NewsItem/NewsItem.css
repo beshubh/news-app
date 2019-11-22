@@ -1,0 +1,88 @@
+.newsItem {
+    /* Add shadows to create the "card" effect */
+    width: inherit;
+    height: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    text-align: start;
+    padding-bottom: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.newsItem:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.newsContainer {
+    padding: 2px 16px;
+}
+.desc{
+    font-size: small;
+}
+newsItemImage{
+    height: 200px;
+    width:150px;
+}
+.sourceText{
+    text-align: start;
+    margin:5px;
+    color:gray;
+    font-size: 15px;
+}
+a{
+    color:black;
+    text-decoration: none;
+    transition:0.3s;
+}
+a:hover{
+    text-decoration: underline;
+    transition: 0.3s;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .newsItem{
+        width: 90%;
+        margin:auto;
+        font-size: 16px;
+    }
+    .desc{
+        font-size: 16px;
+    }
+    .sourceText{
+        font-size: 13px;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 769px) {
+    .newsItem{
+        width:90%;
+        margin:auto;
+        font-size: 16px;
+    }
+    .desc{
+        font-size: 16px;
+    }
+    .sourceText{
+        font-size: 13px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

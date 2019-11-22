@@ -1,0 +1,45 @@
+.SideBar{
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    color: white;
+    background-color: darkslategray;
+    display: flex;
+    flex-flow: column;
+    text-align: start;
+}
+.SideBar ul{
+    list-style: none;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .SideBar{
+        height: 7%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        font-size: 18px;
+    }
+    .SideBar ul{
+        list-style: none;
+        display: flex;
+
+    }
+}
+
+ /*Small devices (portrait tablets and large phones, 600px and up)*/
+@media only screen and (max-width: 769px) {
+    .SideBar{
+        position: fixed;
+        top: 0;
+        height: 7%;
+        width: 100%;
+        font-size: 18px;
+    }
+    .SideBar ul{
+        list-style: none;
+        display: flex;
+    }
+}
