@@ -4,14 +4,36 @@
     position: fixed;
     width: 20%;
     height: 100%;
-    color: white;
-    background-color: darkslategray;
+    color: #282c34;
     display: flex;
     flex-flow: column;
     text-align: start;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .SideBar ul{
     list-style: none;
+}
+.SideBar ul a{
+    padding:16px;
+    box-sizing: border-box;
+    display: block;
+    color: #212121;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bolder;
+}
+.SideBar ul a:hover{
+    text-decoration: none;
+    transition: 0.4s;
+    border-radius: 20px 0px 0px 20px;
+    background-color: #ecf0f1;
+}
+.SideBar ul a.active{
+    color: #3498db;
+    border-radius: 20px 0px 0px 20px;
+    border-right: 10px solid #3498db;
+    background-color: #ecf0f1;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -19,13 +41,39 @@
         height: 7%;
         width: 100%;
         position: fixed;
-        top: 0;
-        font-size: 18px;
+        font-size: 16px;
+        top:0;
+        z-index: 100;
+        background-color: aliceblue;
+        color: white;
+    }
+    .SideBar ul a{
+        padding:16px;
+        box-sizing: border-box;
+        display: block;
+        color: #212121;
+        text-decoration: none;
+        font-size: large;
+        font-weight: bolder;
+        height: auto;
     }
     .SideBar ul{
+        color: white;
         list-style: none;
         display: flex;
-
+    }
+    .SideBar ul a.active{
+        color: #3498db;
+        border-radius: 0px 10px 10px 0px;
+        border-bottom: 10px solid #3498db;
+        background-color: #ecf0f1;
+    }
+    .SideBar ul a:hover{
+        text-decoration: none;
+        height: fit-content;
+        transition: 0.4s;
+        border-radius: 10px 10px 0px 0px;
+        background-color: #ecf0f1;
     }
 }
 
@@ -34,12 +82,42 @@
     .SideBar{
         position: fixed;
         top: 0;
-        height: 7%;
+        height: 10%;
         width: 100%;
         font-size: 18px;
+        z-index: 100;
+        color:white;
+        background-color: aliceblue;
+
+    }
+    .SideBar ul a{
+        padding:5px;
+        box-sizing: border-box;
+        display: block;
+        color: #212121;
+        text-decoration: none;
+        font-size: small;
+        font-weight: bold;
     }
     .SideBar ul{
+        overflow-x: auto;
         list-style: none;
+        color: white;
         display: flex;
+        justify-content: space-around;
+    }
+    .SideBar ul a.active{
+        color: #3498db;
+        border-radius: 10px 10px 0 0;
+        border-right: none;
+        border-bottom: 5px solid #3498db;
+        background-color: #ecf0f1;
+    }
+    .SideBar ul a:hover{
+        text-decoration: none;
+        height: fit-content;
+        transition: 0.4s;
+        border-radius: 10px 10px 0px 0px;
+        background-color: #ecf0f1;
     }
 }

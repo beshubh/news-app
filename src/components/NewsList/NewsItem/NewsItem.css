@@ -24,9 +24,17 @@
 .desc{
     font-size: small;
 }
-newsItemImage{
-    height: 200px;
+.newsItemImage{
     width:150px;
+    height:150px;
+    top:0;
+    right:0;
+    float:right;
+    border-radius:10px;
+}
+.newsItemImageFullView{
+    width: 100%;
+    height: 400px;
 }
 .sourceText{
     text-align: start;

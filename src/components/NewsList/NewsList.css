@@ -4,31 +4,36 @@
     justify-content: center;
     width: 70%;
     margin-left: 21%;
-    z-index: 100;
+    margin-top: fill;
 
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .newsListContainer{
-        margin-top:9%;
+        margin-top:7%;
         display: flex;
         flex-flow: column;
         justify-content: center;
         width: 100%;
-        margin-left: 0;
-        z-index: 1000;
+        z-index: 10;
+    }
+    .category{
+        opacity: 0;
     }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 769px) {
     .newsListContainer{
-        margin-top: 9%;
+        margin-top: 7%;
         display: flex;
         flex-flow: column;
         justify-content: center;
         width: 100%;
         margin-left: 0;
-        z-index: 1000;
+        z-index: 10;
+    }
+    .category{
+        opacity: 0;
     }
 }

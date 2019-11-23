@@ -1,0 +1,18 @@
+.category{
+    position: sticky;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    height: fit-content;
+    font-size: medium;
+    text-align: start;
+    z-index: 100;
+    display: block;
+    box-sizing: border-box;
+    width:50%;
+    float: left;margin-right: 29%;
+    font-weight: bolder;
+    padding:10px;
+    color: #3498db;
+    background-color: #ecf0f1;
+}
