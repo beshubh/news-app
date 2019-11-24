@@ -1,6 +1,5 @@
 import React from 'react';
 import './SideBar.css';
-import {Link, NavLink} from "react-router-dom";
 class SideBar extends React.Component{
     handleOnOptionsClick =(option)=>{
       this.props.onOptionsClick(option);

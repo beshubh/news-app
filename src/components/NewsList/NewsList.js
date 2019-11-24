@@ -1,7 +1,6 @@
 import React from 'react';
 import NewsItem from './NewsItem/NewsItem';
 import './NewsList.css';
-import Category from './Category/Category';
 class NewsList extends React.Component{
     render() {
         let newsToRender=<p style={{
