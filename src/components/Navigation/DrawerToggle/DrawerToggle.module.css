@@ -1,11 +1,13 @@
 .DrawerToggle {
+   display: block;
+    background-image: url("./menu.png");
     width: 40px;
-    height: 100%;
-    align-items: center;
+    height: 40px;
+    background-repeat: no-repeat;
     cursor: pointer;
-    margin:5px;
-    padding-top: 6px;
-    padding-left: 10px;
+    border:1px solid inherit;
+    outline: none;
+    margin:10px;
 }
 
 .DrawerToggle div {
