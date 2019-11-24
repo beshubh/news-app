@@ -14,7 +14,7 @@
 .SideBar ul{
     list-style: none;
 }
-.SideBar ul a{
+.SideBar ul p{
     padding:16px;
     box-sizing: border-box;
     display: block;
@@ -23,13 +23,14 @@
     font-size: large;
     font-weight: bolder;
 }
-.SideBar ul a:hover{
+.SideBar ul p:hover{
+    cursor: pointer;
     text-decoration: none;
     transition: 0.4s;
     border-radius: 20px 0px 0px 20px;
     background-color: #ecf0f1;
 }
-.SideBar ul a.active{
+.SideBar ul p.active{
     color: #3498db;
     border-radius: 20px 0px 0px 20px;
     border-right: 10px solid #3498db;
@@ -47,7 +48,7 @@
         background-color: aliceblue;
         color: white;
     }
-    .SideBar ul a{
+    .SideBar ul p{
         padding:16px;
         box-sizing: border-box;
         display: block;
@@ -62,13 +63,14 @@
         list-style: none;
         display: flex;
     }
-    .SideBar ul a.active{
+    .SideBar ul p.active{
         color: #3498db;
         border-radius: 0px 10px 10px 0px;
         border-bottom: 10px solid #3498db;
         background-color: #ecf0f1;
     }
-    .SideBar ul a:hover{
+    .SideBar ul p:hover{
+        cursor: pointer;
         text-decoration: none;
         height: fit-content;
         transition: 0.4s;
@@ -90,7 +92,7 @@
         background-color: aliceblue;
 
     }
-    .SideBar ul a{
+    .SideBar ul p{
         padding:5px;
         box-sizing: border-box;
         display: block;
@@ -106,14 +108,15 @@
         display: flex;
         justify-content: space-around;
     }
-    .SideBar ul a.active{
+    .SideBar ul p.active{
         color: #3498db;
         border-radius: 10px 10px 0 0;
         border-right: none;
         border-bottom: 5px solid #3498db;
         background-color: #ecf0f1;
     }
-    .SideBar ul a:hover{
+    .SideBar ul p:hover{
+        cursor: pointer;
         text-decoration: none;
         height: fit-content;
         transition: 0.4s;

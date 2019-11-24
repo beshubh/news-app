@@ -6,35 +6,26 @@ class SideBar extends React.Component{
       this.props.onOptionsClick(option);
     };
     render() {
-        const homeParams ={
-            pathname:'/news-app/in',
-        };
-        const techParams = {
-            pathname: '/news-app/technology',
-        };
-        const sportsParams = {
-            pathname: '/news-app/sports',
-
-        };
-        const bbcParams = {
-            pathname: '/news-app/bbc',
-        };
-
+        let classes = '';
+        let links = (
+            <>
+            <li onClick={() =>this.handleOnOptionsClick('home')}>
+                <p> Home</p></li>
+            <li onClick={() =>this.handleOnOptionsClick('in')}>
+                <p>India</p></li>
+            <li onClick={() =>this.handleOnOptionsClick('tech')}>
+                <p>Tech</p></li>
+            <li onClick={() =>this.handleOnOptionsClick('sports')}>
+                <p>Sports</p></li>
+            <li onClick={() =>this.handleOnOptionsClick('bbc')}>
+                <p className={classes}>BBC</p></li>
+                </>
+        );
         return(
             <div className='SideBar'>
                 <nav>
                     <ul>
-                        <li onClick={() =>this.handleOnOptionsClick('home')}>
-                            <NavLink to={{pathname:'/news-app',state:'home'}} exact> Home</NavLink></li>
-                        <li onClick={() =>this.handleOnOptionsClick('in')}>
-                            <NavLink to={homeParams}>India</NavLink></li>
-                        <li onClick={() =>this.handleOnOptionsClick('tech')}>
-                            <NavLink to={techParams}>Tech</NavLink></li>
-                        <li onClick={() =>this.handleOnOptionsClick('sports')}>
-                            <NavLink to={sportsParams}>Sports</NavLink></li>
-                        <li onClick={() =>this.handleOnOptionsClick('bbc')}>
-                            <NavLink to={bbcParams}>BBC</NavLink></li>
-
+                        {links}
                     </ul>
                 </nav>
             </div>
