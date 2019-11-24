@@ -2,43 +2,39 @@ import React from 'react';
 import NewsItem from './NewsItem/NewsItem';
 import './NewsList.css';
 import Spinner from '../UI/Spinner/Spinner';
-class NewsList extends React.Component{
-    render() {
-        let newsToRender=<div style={{
-            marginTop:"50vh",
-            marginLeft:'50vh',
-            marginRight:'50vh',
-            marginBottom:'50vh',
 
-            alignSelf:"center",
-        }}>
-            <Spinner/>
-        </div>;
-        if (this.props.loaded) {
-             newsToRender = this.props.newsList.map((news) => {
-                return <NewsItem
-                    loaded={this.props.loaded}
-                    imageUrl={news.urlToImage}
-                    source={news.source.name}
-                    key={news.title}
-                    title={news.title}
-                    desc={news.description}
-                    content={news.content}
-                    publishedAt={news.publishedAt}
-                    url={news.url}
+export default function newsList(props){
+    let newsToRender=<div style={{
+        marginTop:"50vh",
+        marginLeft:'50vh',
+        marginRight:'50vh',
+        marginBottom:'50vh',
 
-                />;
-            });
-        }
-        return (
-            <div>
-                <section className='newsListContainer'>
-                    <>
-                    {newsToRender}
-                    </>
-                    </section>
-            </div>
-        );
+        alignSelf:"center",
+    }}>
+        <Spinner/>
+    </div>;
+    if (props.loaded) {
+         newsToRender = props.newsList.map((news) => {
+            return <NewsItem
+                loaded={props.loaded}
+                imageUrl={news.urlToImage}
+                source={news.source.name}
+                key={news.title}
+                title={news.title}
+                desc={news.description}
+                content={news.content}
+                publishedAt={news.publishedAt}
+                url={news.url}
+
+            />;
+        });
     }
+    return (
+        <main>
+            <div>
+                {newsToRender}
+            </div>
+        </main>
+    );
 }
-export  default NewsList;

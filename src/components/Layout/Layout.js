@@ -7,7 +7,7 @@ import axios from "axios";
 import Category from '../NewsList/Category/Category';
 import SideDrawerMobile from '../Navigation/SideDrawerMobile/SideDrawerMobile';
 import NavBar from '../Navigation/NavBar';
-
+import ResponsiveDrawer from "../Navigation/ResponsiveNavBar/ResponsiveNavBar";
 
 const API_KEY = 'eb6408d7171b409980b3d243ec54c9aa';
 const topHeadlines = 'https://newsapi.org/v2/top-headlines?';
@@ -82,20 +82,21 @@ class Layout extends React.Component{
         });
     };
     handleOnOptionClick =(option)=>{
+        console.log(option);
         this.setState({loaded:false});
-        if(option === 'home'){
+        if(option === 'Home'){
             this.getInitialNews();
         }
-        if(option === 'in'){
+        if(option === 'India'){
             this.getIndiaTopHeadlines();
         }
-        if(option=== 'tech'){
+        if(option=== 'Tech'){
             this.getCategoricalNews('technology');
         }
-        if(option === 'sports'){
+        if(option === 'Sports'){
             this.getCategoricalNews('sports');
         }
-        if(option === 'bbc'){
+        if(option === 'BBC'){
             this.getNewsFromSource('bbc-news');
         }
     };
@@ -117,21 +118,27 @@ class Layout extends React.Component{
     render() {
            return(
                <div className='container'>
-                   <NavBar
+                   {/*<NavBar*/}
+                   {/*    category={this.state.category}*/}
+                   {/*    drawerToggleClicked={this.sideDrawerToggleHandler}*/}
+                   {/*    onOptionsClick ={(option)=> this.handleOnOptionClick(option)}*/}
+                   {/*/>*/}
+                   {/*<SideDrawerMobile*/}
+                   {/*    onOptionsClick ={(option)=> this.handleOnOptionClick(option)}*/}
+                   {/*    category={this.state.category}*/}
+                   {/*    open = {this.state.showSideDrawerMobile}*/}
+                   {/*    closed = {this.sideDrawerClosedHandler}*/}
+                   {/*/>*/}
+                   {/*<Category category={this.state.category} />*/}
+                   <ResponsiveDrawer
                        category={this.state.category}
-                       drawerToggleClicked={this.sideDrawerToggleHandler}
                        onOptionsClick ={(option)=> this.handleOnOptionClick(option)}
+
                    />
-                   <SideDrawerMobile
-                       onOptionsClick ={(option)=> this.handleOnOptionClick(option)}
-                       category={this.state.category}
-                       open = {this.state.showSideDrawerMobile}
-                       closed = {this.sideDrawerClosedHandler}
-                   />
-                   <Category category={this.state.category} />
                    <NewsList newsList = {this.state.newsList}
                              category={this.state.category}
                              loaded={this.state.loaded}/>
+
                </div>
            );
        }
