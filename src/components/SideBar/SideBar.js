@@ -7,17 +7,17 @@ class SideBar extends React.Component{
     };
     render() {
         const homeParams ={
-            pathname:'/in',
+            pathname:'/news-app/in',
         };
         const techParams = {
-            pathname: '/technology',
+            pathname: '/news-app/technology',
         };
         const sportsParams = {
-            pathname: '/sports',
+            pathname: '/news-app/sports',
 
         };
         const bbcParams = {
-            pathname: '/bbc',
+            pathname: '/news-app/bbc',
         };
 
         return(
@@ -25,7 +25,7 @@ class SideBar extends React.Component{
                 <nav>
                     <ul>
                         <li onClick={() =>this.handleOnOptionsClick('home')}>
-                            <NavLink to={{pathname:'/',state:'home'}} exact> Home</NavLink></li>
+                            <NavLink to={{pathname:'/news-app',state:'home'}} exact> Home</NavLink></li>
                         <li onClick={() =>this.handleOnOptionsClick('in')}>
                             <NavLink to={homeParams}>India</NavLink></li>
                         <li onClick={() =>this.handleOnOptionsClick('tech')}>
