@@ -5,9 +5,12 @@ class SideBar extends React.Component{
     state = {
         selectedCategory:'home',
     };
-    handleOnOptionsClick =(option)=>{
-        this.setState({selectedCategory:option});
+    handleOnOptionsClick =async (option)=>{
+        await this.setState({selectedCategory:option});
         this.props.onOptionsClick(option);
+        console.log(option);
+        console.log(this.state.selectedCategory);
+        console.log(this.state.selectedCategory);
     };
     render() {
         let links = (

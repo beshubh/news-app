@@ -5,8 +5,11 @@ class SideDrawerMobile extends React.Component{
     state = {
         selectedCategory:'home',
     };
-    handleOnOptionsClick =(option)=>{
-        this.setState({selectedCategory:option});
+    handleOnOptionsClick =async (option)=>{
+        const newCategory = option;
+        await this.setState({selectedCategory:newCategory});
+        console.log(option);
+        console.log(this.state.selectedCategory);
         this.props.onOptionsClick(option);
     };
    render() {
@@ -17,15 +20,15 @@ class SideDrawerMobile extends React.Component{
        const links = (
            <>
            <li onClick={() =>this.handleOnOptionsClick('home')}>
-               <p className={this.state.selectedCategory==='home'? 'active':''}> Home</p></li>
+               <p className={this.state.selectedCategory==='home'? styles.active:''}> Home</p></li>
                <li onClick={() =>this.handleOnOptionsClick('in')}>
-               <p className={this.state.selectedCategory==='in'? 'active':''}>India</p></li>
+               <p className={this.state.selectedCategory==='in'? styles.active:''}>India</p></li>
                <li onClick={() =>this.handleOnOptionsClick('tech')}>
-               <p className={this.state.selectedCategory==='tech'? 'active':''}>Tech</p></li>
+               <p className={this.state.selectedCategory==='tech'? styles.active:''}>Tech</p></li>
                <li onClick={() =>this.handleOnOptionsClick('sports')}>
-               <p className={this.state.selectedCategory==='sports'? 'active':''}>Sports</p></li>
+               <p className={this.state.selectedCategory==='sports'? styles.active:''}>Sports</p></li>
                <li onClick={() =>this.handleOnOptionsClick('bbc')}>
-               <p className={this.state.selectedCategory==='bbc'? 'active':''}>BBC</p></li>
+               <p className={this.state.selectedCategory==='bbc'? styles.active:''}>BBC</p></li>
                </>
                );
 

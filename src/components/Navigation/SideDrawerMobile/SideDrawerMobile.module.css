@@ -49,3 +49,9 @@ ul p.active{
     border-right: 10px solid #3498db;
     background-color: #ecf0f1;
 }
+.active{
+    color: #3498db;
+    border-radius: 20px 0px 0px 20px;
+    border-right: 10px solid #3498db;
+    background-color: #ecf0f1;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
 import NewsItem from './NewsItem/NewsItem';
 import './NewsList.css';
+import Spinner from '../UI/Spinner/Spinner';
 class NewsList extends React.Component{
     render() {
-        let newsToRender=<p style={{
+        let newsToRender=<div style={{
             marginTop:"50vh",
             marginLeft:'50vh',
             marginRight:'50vh',
             marginBottom:'50vh',
 
             alignSelf:"center",
-        }}>Loading...</p>;
+        }}>
+            <Spinner/>
+        </div>;
         if (this.props.loaded) {
              newsToRender = this.props.newsList.map((news) => {
                 return <NewsItem
