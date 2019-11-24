@@ -1,12 +1,7 @@
 import  React from 'react';
 import NewsList from '../NewsList/NewsList';
-import SideBar from '../Navigation/SideBar/SideBar';
 import './Layout.css'
 import axios from "axios";
-
-import Category from '../NewsList/Category/Category';
-import SideDrawerMobile from '../Navigation/SideDrawerMobile/SideDrawerMobile';
-import NavBar from '../Navigation/NavBar';
 import ResponsiveDrawer from "../Navigation/ResponsiveNavBar/ResponsiveNavBar";
 
 const API_KEY = 'eb6408d7171b409980b3d243ec54c9aa';

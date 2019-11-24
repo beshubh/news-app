@@ -3,7 +3,7 @@ import './NewsItem.css';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import clsx from 'clsx';
-import { Card, CardActionArea, CardMedia, Typography,Collapse,CardContent,CardActions} from '@material-ui/core';
+import { Card,  CardMedia, Typography,Collapse,CardContent} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {makeStyles} from '@material-ui/core/styles';

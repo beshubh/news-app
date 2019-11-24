@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -6,20 +6,20 @@ import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
-import {Home} from '@material-ui/icons'
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
-
+//create your forceUpdate hook
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    return () => setValue(value => ++value); // update the state to force render
+}
 const useStyles = makeStyles(theme => ({
     root: {
         display: 'flex',
@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
         },
+        backgroundColor:'#3498db'
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -57,11 +58,21 @@ function ResponsiveDrawer(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const forceUpdate = useForceUpdate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-
+    let activeElement = 'Home';
+    const handleListItemClicked=(text)=>{
+        activeElement = text;
+        props.onOptionsClick(text);
+        forceUpdate();
+    };
+    const listItemStyle={
+        backgroundColor: 'red',
+        color:'white',
+    };
     const drawer = (
         <div>
             <div className={classes.toolbar} />
@@ -69,7 +80,11 @@ function ResponsiveDrawer(props) {
             <List>
                 {['Home', 'India', 'Tech', 'Sports','BBC'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemText primary={text} onClick={()=>props.onOptionsClick(text)} />
+                            <ListItemText
+                                style={activeElement===text?listItemStyle:{}}
+                                className={activeElement===text?'active':''}
+                                primary={text}
+                                onClick={()=>handleListItemClicked(text)} />
                     </ListItem>
                 ))}
             </List>
