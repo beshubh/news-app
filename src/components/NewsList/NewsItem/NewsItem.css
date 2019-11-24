@@ -33,6 +33,7 @@
     border-radius:10px;
 }
 .newsItemImageFullView{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: 100%;
     height: 400px;
 }
@@ -51,12 +52,61 @@ a:hover{
     text-decoration: underline;
     transition: 0.3s;
 }
+.newsItemFullView {
+    height: fit-content;
+    width: inherit;
+    text-align: start;
+    animation-name: stretch;
+    margin:10px;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation-play-state: running;
+}
+.newsItemButton{
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    margin: 20px 10px;
+    transition: 0.2s;
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: #3498db;
+    color: #fff;
+    outline: 1px solid #3498db;
+    border:1px solid #3498db;
+}
+.newsItemButton:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+@keyframes stretch {
+    0% {
+        transform: scale(.7);
+    }
+    50% {
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .newsItem{
         width: 90%;
         margin:auto;
         font-size: 16px;
+    }
+    .newsItemFullView{
+        width: 90%;
+        font-size: 20px;
+        margin:auto;
     }
     .desc{
         font-size: 16px;
@@ -70,9 +120,14 @@ a:hover{
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 769px) {
     .newsItem{
-        width:90%;
-        margin:auto;
-        font-size: 16px;
+        width:98%;
+        margin:5px;
+        font-size: 20px;
+    }
+    .newsItemFullView{
+        width: 98%;
+        font-size: 20px;
+        margin:5px;
     }
     .desc{
         font-size: 16px;
@@ -80,17 +135,4 @@ a:hover{
     .sourceText{
         font-size: 13px;
     }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
 }

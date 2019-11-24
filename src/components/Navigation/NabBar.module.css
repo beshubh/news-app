@@ -1,0 +1,15 @@
+.NavBar{
+    background-color: #ecf0f1;
+    width: 100%;
+    position: fixed;
+    height: 55px;
+    top: 0;
+    cursor: pointer;
+    pointer-events: visibleFill;
+}
+@media (min-width: 768px) {
+    .NavBar{
+        width: inherit;
+
+    }
+}

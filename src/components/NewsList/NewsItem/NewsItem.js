@@ -50,21 +50,20 @@ class NewsItem extends React.Component{
                     </h5>
                     </a>
                     <p className='desc'>{desc}</p>
-                    <button onClick={this.handleOnViewClick}>View </button><br/>
+                    <button className='newsItemButton' onClick={this.handleOnViewClick}>View </button><br/>
                     <small className='sourceText'>{source} | {publishedAt}</small>
                 </div>
             </div>
         );
         if(this.state.fullView){
             newsItem=(
-                <div className='newsItem'>
+                <div className='newsItemFullView'>
                     {newsItemImage}
                     <div className="newsContainer">
                         <a target='_blank' href={url}><h5>
                             {title}
                         </h5>
                         </a>
-                        <p className='desc'>{desc}</p>
                         <p>{content}</p>
                         <small className='sourceText'>{source} | {publishedAt}</small>
                     </div>
