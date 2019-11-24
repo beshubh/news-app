@@ -8,12 +8,12 @@ function App() {
 
           <div className="App">
             <Layout/>
-            <Switch>
-                {/*<Route path='/in' component={NewsList}/>*/}
-                <Route path='/sports' component={NewsList}/>
-                <Route path='/technology' component={NewsList}/>
-                <Route path='/' component={NewsList}/>
-            </Switch>
+            {/*<Switch>*/}
+            {/*    /!*<Route path='/in' component={NewsList}/>*!/*/}
+            {/*    <Route path='/sports' component={NewsList}/>*/}
+            {/*    <Route path='/technology' component={NewsList}/>*/}
+            {/*    <Route path='/' component={NewsList}/>*/}
+            {/*</Switch>*/}
         </div>
 
   );
