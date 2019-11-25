@@ -13,7 +13,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-
+import SearchBar from '../SearchBar/SearchBar';
+import styles from './ResponsiveNavBar.module.css';
 const drawerWidth = 240;
 //create your forceUpdate hook
 function useForceUpdate(){
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(3),
     },
 }));
-
+let activeElement = 'Home';
 function ResponsiveDrawer(props) {
     const { container } = props;
     const classes = useStyles();
@@ -63,15 +64,15 @@ function ResponsiveDrawer(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    let activeElement = 'Home';
     const handleListItemClicked=(text)=>{
         activeElement = text;
         props.onOptionsClick(text);
         forceUpdate();
     };
     const listItemStyle={
-        backgroundColor: 'red',
-        color:'white',
+        borderRight:'4px solid #3498db',
+        fontWeight:'bold',
+        color:'#3498db'
     };
     const drawer = (
         <div>
@@ -81,10 +82,9 @@ function ResponsiveDrawer(props) {
                 {['Home', 'India', 'Tech', 'Sports','BBC'].map((text, index) => (
                     <ListItem button key={text}>
                             <ListItemText
-                                style={activeElement===text?listItemStyle:{}}
-                                className={activeElement===text?'active':''}
-                                primary={text}
-                                onClick={()=>handleListItemClicked(text)} />
+                            style={activeElement===text?listItemStyle:{}}
+                            primary={text}
+                            onClick={()=>handleListItemClicked(text)} />
                     </ListItem>
                 ))}
             </List>
@@ -105,9 +105,10 @@ function ResponsiveDrawer(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
+                    <h2 className={styles.heading}>
                         {props.category}
-                    </Typography>
+                    </h2>
+                    <SearchBar/>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">

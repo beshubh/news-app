@@ -105,7 +105,7 @@ class Layout extends React.Component{
         });
     };
     sideDrawerClosedHandler = ()=>{
-
+        
         this.setState({
             showSideDrawerMobile:false,
         });
