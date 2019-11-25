@@ -66,6 +66,7 @@ function ResponsiveDrawer(props) {
     };
     const handleListItemClicked=(text)=>{
         activeElement = text;
+        setMobileOpen(false);
         props.onOptionsClick(text);
         forceUpdate();
     };
