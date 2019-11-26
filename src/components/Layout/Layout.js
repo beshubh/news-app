@@ -4,16 +4,15 @@ import './Layout.css'
 import axios from "axios";
 import ResponsiveDrawer from "../Navigation/ResponsiveNavBar/ResponsiveNavBar";
 
-const API_KEY = 'eb6408d7171b409980b3d243ec54c9aa';
-const topHeadlines = 'https://newsapi.org/v2/top-headlines?';
-const apiKey = 'apiKey='+API_KEY;
+export const API_KEY = 'eb6408d7171b409980b3d243ec54c9aa';
+export const topHeadlines = 'https://newsapi.org/v2/top-headlines?';
+export const apiKey = 'apiKey='+API_KEY;
 
 class Layout extends React.Component{
     state ={
         newsList:null,
         loaded:false,
         category:'Headlines',
-        showSideDrawerMobile:false,
     };
     componentDidMount() {
         //display news for google news for homepage other categories from props

@@ -11,14 +11,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SearchBar from '../SearchBar/SearchBar';
 import styles from './ResponsiveNavBar.module.css';
 const drawerWidth = 240;
 //create your forceUpdate hook
 function useForceUpdate(){
-    const [value, setValue] = useState(0); // integer state
+    let [value, setValue] = useState(0); // integer state
+    value+=1;
     return () => setValue(value => ++value); // update the state to force render
 }
 const useStyles = makeStyles(theme => ({
