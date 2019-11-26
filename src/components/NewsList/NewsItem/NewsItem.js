@@ -3,7 +3,7 @@ import './NewsItem.css';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import clsx from 'clsx';
-import { Card,  CardMedia, Typography,Collapse,CardContent} from '@material-ui/core';
+import { Card,  CardMedia, Typography,Collapse,CardContent, Link} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {makeStyles} from '@material-ui/core/styles';
@@ -101,6 +101,7 @@ export default function newsItem(props){
                     <CardContent>
                         <Typography paragraph>
                             {content}
+                            <Link href={url} target='_blank' variant='body1'>Read more</Link>
                         </Typography>
                     </CardContent>
                 </Collapse>
