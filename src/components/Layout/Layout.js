@@ -77,8 +77,9 @@ class Layout extends React.Component{
         });
     };
     getNewsUsingSearchQuery=(query)=>{
-        
-        this.setState({category:query,loaded:false});
+        let category = query.split(' ');
+        category=category[0];
+        this.setState({category:category,loaded:false});
         let url = everyThing +
                 'q='+query+'&'+
                 'sortBy=publishedAt&'+
