@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
         alignContent: 'start',
         textAlign: 'start',
         position:'relative',
-        margin:5,
+        margin:10,
     },
     media: {
         height: 0,

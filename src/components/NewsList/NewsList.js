@@ -33,6 +33,9 @@ export default function newsList(props){
     return (
         <main>
             <div>
+                <br></br>
+                <br></br>
+
                 {newsToRender}
             </div>
         </main>

@@ -1,6 +1,8 @@
 .suggestionArea{
     height: 500px;
     display: flex;
+    text-align: start;
+    font-size: small;
     flex-flow:column;
     margin:10px;
     padding:10px;
@@ -9,15 +11,4 @@
     background-color: white;
     width:400px;
     color:black;
-}
-@media(max-width:700px){
-    .suggestionArea{
-        height: 200px;
-        margin:10px;
-        padding:10px;
-        position: absolute;
-        overflow-y: auto;
-        background-color: white;
-        width:100%;
-    }
 }

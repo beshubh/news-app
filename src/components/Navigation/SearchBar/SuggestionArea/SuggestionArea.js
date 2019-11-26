@@ -15,14 +15,11 @@ const suggestionArea=(props)=>{
     return(
         <div>
             {props.show?
-            <React.Fragment>
             <div className={styles.suggestionArea}>
                 <div className={styles.suggestionList}>
                     {suggestionList}
                 </div>
             </div>
-            <BackDrop show/>
-            </React.Fragment>
         :null}
         </div>
     );

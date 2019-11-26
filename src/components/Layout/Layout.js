@@ -4,8 +4,9 @@ import './Layout.css'
 import axios from "axios";
 import ResponsiveDrawer from "../Navigation/ResponsiveNavBar/ResponsiveNavBar";
 
-export const API_KEY = 'eb6408d7171b409980b3d243ec54c9aa';
+export const API_KEY = 'ae066aa55c244b498bc6ffac49f29c60';
 export const topHeadlines = 'https://newsapi.org/v2/top-headlines?';
+const everyThing = 'https://newsapi.org/v2/everything?';
 export const apiKey = 'apiKey='+API_KEY;
 
 class Layout extends React.Component{
@@ -75,6 +76,20 @@ class Layout extends React.Component{
             console.log(error);
         });
     };
+    getNewsUsingSearchQuery=(query)=>{
+        console.log('getNewsUsingSearchQuery',query);
+        this.setState({category:query,loaded:false});
+        let url = everyThing +
+                'q='+query+'&'+
+                'sortBy=publishedAt&'+
+                apiKey;
+        axios.get(url).then((response)=>{
+            const newsList = response.data.articles;
+            this.setState({newsList:newsList,loaded:true});
+        }).catch((error)=>{
+            console.log(error);
+        });
+    }
     handleOnOptionClick =(option)=>{
         console.log(option);
         this.setState({loaded:false});
@@ -125,8 +140,9 @@ class Layout extends React.Component{
                    {/*/>*/}
                    {/*<Category category={this.state.category} />*/}
                    <ResponsiveDrawer
-                       category={this.state.category}
-                       onOptionsClick ={(option)=> this.handleOnOptionClick(option)}
+                    getNewsUsingSearchQuery = {(query)=>this.getNewsUsingSearchQuery(query)}
+                    category={this.state.category}
+                    onOptionsClick ={(option)=> this.handleOnOptionClick(option)}
 
                    />
                    <NewsList newsList = {this.state.newsList}

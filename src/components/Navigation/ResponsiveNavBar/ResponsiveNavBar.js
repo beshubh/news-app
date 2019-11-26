@@ -109,7 +109,7 @@ function ResponsiveDrawer(props) {
                     <h2 className={styles.heading}>
                         {props.category}
                     </h2>
-                    <SearchBar/>
+                    <SearchBar newsUsingSearch={(query)=>props.getNewsUsingSearchQuery(query)}/>
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">
